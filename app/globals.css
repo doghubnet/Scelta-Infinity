@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-cream text-navy antialiased;
+}
+
+.section-container {
+  @apply mx-auto max-w-7xl px-6 py-16 md:px-10 lg:py-24;
+}
+
+.gold-gradient {
+  background: linear-gradient(120deg, #d4af37 0%, #f3e2a0 45%, #d4af37 100%);
+}
