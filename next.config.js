@@ -15,6 +15,13 @@ const nextConfig = {
         hostname: 'm.media-amazon.com'
       }
     ]
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      'framer-motion': require('path').resolve(__dirname, 'lib/framer-motion.tsx')
+    };
+    return config;
   }
 };
 

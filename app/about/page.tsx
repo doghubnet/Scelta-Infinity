@@ -1,9 +1,10 @@
 import { Card, SectionTitle } from "@/components/ui";
 import { company } from "@/lib/site-data";
+import { MotionSection } from "@/components/motion-section";
 
 export default function AboutPage() {
   return (
-    <section className="section-container">
+    <MotionSection className="section-container">
       <SectionTitle eyebrow="Brand Story" title="About Scelta Infinity" description="A modern publishing and affiliate showcase established by Gediyon Adamu Yeshitila." />
       <Card>
         <p className="text-lg text-navy/85">
@@ -12,6 +13,6 @@ export default function AboutPage() {
         <p className="mt-4 text-navy/85">Mission: {company.mission}</p>
         <p className="mt-3 text-navy/85">Vision: {company.vision}</p>
       </Card>
-    </section>
+    </MotionSection>
   );
 }

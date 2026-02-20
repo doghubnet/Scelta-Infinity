@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Card, PrimaryButton, SectionTitle } from "@/components/ui";
+import { MotionSection } from "@/components/motion-section";
 import { affiliateDisclosure } from "@/lib/site-data";
 
 const products = [
@@ -22,7 +23,7 @@ const products = [
 
 export default function AffiliateMarketplacePage() {
   return (
-    <section className="section-container">
+    <MotionSection className="section-container">
       <SectionTitle
         eyebrow="Curated Recommendations"
         title="Affiliate Marketplace"
@@ -51,6 +52,6 @@ export default function AffiliateMarketplacePage() {
         Amazon Affiliate Disclosure: As an Amazon Associate, Scelta Infinity may earn from qualifying purchases. This
         does not increase your purchase cost.
       </p>
-    </section>
+    </MotionSection>
   );
 }

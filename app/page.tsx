@@ -1,23 +1,28 @@
 import Link from "next/link";
 import { Card, PrimaryButton, SectionTitle } from "@/components/ui";
 import { affiliateDisclosure, company } from "@/lib/site-data";
+import { MotionSection } from "@/components/motion-section";
 
 const featuredBooks = [
-  "Elite Growth Blueprint for Affiliate Entrepreneurs",
+  "THE BILLIONAIRE BLUEPRINT",
   "Digital Product Publishing Excellence",
   "Evergreen Commission Strategy Playbook"
 ];
 
+const affiliateHighlights = ["Atomic Habits", "The Psychology of Money", "Principles: Life and Work"];
+
 const testimonials = [
-  "Scelta Infinity presents content with a polished, professional standard that reflects true publishing discipline.",
-  "The quality benchmark and clarity of recommendation make this brand stand out as trustworthy.",
-  "A premium brand hub that confidently connects books, affiliate products, and freelance credibility."
+  "Dr. Tesfaye Ababe (Ethiopia): “This book completely changed how I approach wealth building. The practical playbooks are pure gold.”",
+  "Zekariyas Alebel (Ethiopia): “The best investment I made this year. Clear, actionable insights from the world’s top minds.”",
+  "John Thomson (USA): “Finally a book that combines deep research with real-world application. Highly recommended.”",
+  "Alan Tim (UK): “The BUILD IT. SCALE IT. OWN IT. framework is powerful and immediately useful.”",
+  "Benjamin Duke (Canada): “Professional, trustworthy, and truly international in perspective.”"
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="bg-navy text-white">
+      <MotionSection className="bg-navy text-white">
         <div className="section-container grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.25em] text-gold">Scelta Infinity</p>
@@ -28,6 +33,7 @@ export default function HomePage() {
               Built by {company.legalName}, {company.brandName} is a professional digital showcase focused on
               authority, quality, and long-term value in eBook publishing and affiliate marketing.
             </p>
+            <p className="mt-4 text-gold">Serving ambitious minds worldwide.</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <PrimaryButton href="/books" className="bg-gold text-navy hover:bg-gold/90">Explore My Books</PrimaryButton>
               <PrimaryButton href="/affiliate-marketplace" className="border border-gold bg-transparent text-gold hover:bg-gold hover:text-navy">View Affiliate Marketplace</PrimaryButton>
@@ -42,9 +48,9 @@ export default function HomePage() {
             </ul>
           </Card>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="section-container">
+      <MotionSection className="section-container" delay={0.05}>
         <SectionTitle
           eyebrow="Featured Portfolio"
           title="Books Crafted for Real-World Value"
@@ -61,12 +67,42 @@ export default function HomePage() {
             </Card>
           ))}
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="bg-white">
+      <MotionSection className="bg-white" delay={0.08}>
         <div className="section-container">
           <SectionTitle
-            eyebrow="Mission & Vision"
+            eyebrow="Affiliate Marketplace"
+            title="Curated Wealth-Mindset Recommendations"
+            description="Explore premium titles from trusted platforms that align with high-performance thinking and disciplined execution."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {affiliateHighlights.map((item) => (
+              <Card key={item}><p className="font-serif text-2xl text-navy">{item}</p></Card>
+            ))}
+          </div>
+        </div>
+      </MotionSection>
+
+      <MotionSection className="section-container" delay={0.1}>
+        <SectionTitle
+          eyebrow="Client Proof"
+          title="What Our Readers & Clients Say"
+          description="Trusted by ambitious professionals across multiple countries."
+        />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((item) => (
+            <Card key={item} className="border-gold/25">
+              <p className="text-navy/85">{item}</p>
+            </Card>
+          ))}
+        </div>
+      </MotionSection>
+
+      <MotionSection className="bg-white" delay={0.12}>
+        <div className="section-container">
+          <SectionTitle
+            eyebrow="About Us"
             title="Purpose-Driven, Quality-Focused, Globally Oriented"
             description="A refined platform built for lasting brand integrity in publishing and affiliate marketing."
           />
@@ -75,16 +111,7 @@ export default function HomePage() {
             <Card><h3 className="font-serif text-2xl">Vision</h3><p className="mt-4 text-navy/80">{company.vision}</p></Card>
           </div>
         </div>
-      </section>
-
-      <section className="section-container">
-        <SectionTitle eyebrow="Testimonials" title="Professional Perception" description="How the brand is positioned in terms of trust, quality, and authority." />
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((item) => (
-            <Card key={item}><p className="text-navy/80">“{item}”</p></Card>
-          ))}
-        </div>
-      </section>
+      </MotionSection>
 
       <section className="bg-navy py-8 text-center text-sm text-white/90">
         <p>{affiliateDisclosure}</p>

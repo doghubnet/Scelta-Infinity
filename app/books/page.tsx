@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Card, PrimaryButton, SectionTitle } from "@/components/ui";
+import { MotionSection } from "@/components/motion-section";
 
 export default function BooksPage() {
   return (
-    <section className="section-container">
+    <MotionSection className="section-container">
       <SectionTitle
         eyebrow="Amazon KDP Showcase"
         title="My Books"
@@ -37,6 +38,6 @@ export default function BooksPage() {
           </div>
         </div>
       </Card>
-    </section>
+    </MotionSection>
   );
 }
