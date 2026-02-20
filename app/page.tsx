@@ -50,6 +50,24 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
+      <MotionSection className="section-container" delay={0.03}>
+        <SectionTitle
+          eyebrow="Contact"
+          title="Get In Touch"
+          description="Have a question about books, services, or affiliate collaborations? Send a message directly."
+        />
+        <Card className="mx-auto max-w-4xl">
+          <form action="https://formspree.io/f/maqddkdo" method="POST" className="grid gap-4 md:grid-cols-2">
+            <input name="name" required placeholder="Full Name" className="rounded-xl border border-navy/20 p-3" />
+            <input name="email" type="email" required placeholder="Email Address" className="rounded-xl border border-navy/20 p-3" />
+            <textarea name="message" required placeholder="Message / Question" rows={5} className="rounded-xl border border-navy/20 p-3 md:col-span-2" />
+            <button className="rounded-full bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-navy/90 md:col-span-2 md:w-fit">
+              Send Message
+            </button>
+          </form>
+        </Card>
+      </MotionSection>
+
       <MotionSection className="section-container" delay={0.05}>
         <SectionTitle
           eyebrow="Featured Portfolio"
