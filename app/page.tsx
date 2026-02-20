@@ -36,7 +36,6 @@ export default function HomePage() {
           <Card className="bg-white/10 text-white backdrop-blur">
             <h2 className="font-serif text-2xl">Trust Signals</h2>
             <ul className="mt-6 space-y-4 text-sm text-white/90">
-              <li>✓ Professional brand hub for Payoneer verification readiness</li>
               <li>✓ Clear external redirection model (no onsite payment processing)</li>
               <li>✓ Direct links to Fiverr, Upwork, Amazon-focused products, and contact channels</li>
               <li>✓ Transparent affiliate disclosure and legal pages</li>

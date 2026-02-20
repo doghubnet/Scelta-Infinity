@@ -27,7 +27,7 @@ export default function BooksPage() {
             <p className="mt-3 text-xl text-navy/85">Decoding the 100 Wealthiest Minds: From Musk to Arnault</p>
             <p className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-gold">Author: Gediyon Adamu</p>
             <p className="mt-5 text-lg text-navy/85">
-              The Ultimate Collection of Strategies. Detailed profiles of the world's wealthiest minds — Elon Musk,
+              The Ultimate Collection of Strategies. Detailed profiles of the world&apos;s wealthiest minds — Elon Musk,
               Larry Ellison, Jeff Bezos, Larry Page, Mark Zuckerberg, Sergey Brin and more — with their Daily
               Discipline, Books That Changed Their Lives, Iconic Quotes, and Engineered Reset & Mission Rhythm
               Playbooks.
