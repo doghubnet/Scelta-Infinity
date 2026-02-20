@@ -24,42 +24,21 @@ function InfinityArrowLogo() {
   );
 }
 
-const contactLinks = [
-  { label: "Phone", href: `tel:${company.phone.replace(/\s+/g, "")}`, text: company.phone },
-  { label: "WhatsApp", href: `https://wa.me/${company.whatsapp.replace(/\D/g, "")}`, text: company.whatsapp },
-  { label: "Email", href: `mailto:${company.email}`, text: company.email },
-  { label: "Fiverr", href: company.fiverr, text: "Fiverr" },
-  { label: "Upwork", href: company.upwork, text: "Upwork" },
-  { label: "Telegram", href: company.telegram, text: company.telegramHandle },
-  { label: "Instagram", href: company.instagram, text: company.instagramHandle },
-  { label: "LinkedIn", href: company.linkedin, text: company.linkedinDisplay },
-  { label: "Facebook", href: company.facebook, text: "Facebook" }
-];
-
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur">
-      <div className="mx-auto max-w-7xl px-6 py-3 md:px-10">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <Link href="/" className="group flex items-center gap-3" aria-label="Scelta Infinity home">
-            <InfinityArrowLogo />
-            <span className="font-serif text-2xl font-bold text-gold transition duration-300 group-hover:scale-[1.02] group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.55)] md:text-3xl">{company.brandName}</span>
-          </Link>
-          <nav className="flex flex-wrap items-center gap-5 text-sm font-medium text-navy/90">
-            {navLinks.map(([label, path]) => (
-              <Link key={path} href={path} className="transition duration-300 hover:-translate-y-0.5 hover:text-gold">
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-t border-navy/10 pt-2 text-xs text-navy/80">
-          {contactLinks.map((link) => (
-            <a key={link.label} href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noreferrer" : undefined} className="transition hover:text-gold">
-              <span className="font-semibold">{link.label}:</span> {link.text}
-            </a>
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-3 md:px-10">
+        <Link href="/" className="group flex items-center gap-3" aria-label="Scelta Infinity home">
+          <InfinityArrowLogo />
+          <span className="font-serif text-2xl font-bold text-gold transition duration-300 group-hover:scale-[1.02] group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.55)] md:text-3xl">{company.brandName}</span>
+        </Link>
+        <nav className="flex flex-wrap items-center gap-5 text-sm font-medium text-navy/90">
+          {navLinks.map(([label, path]) => (
+            <Link key={path} href={path} className="transition duration-300 hover:-translate-y-0.5 hover:text-gold">
+              {label}
+            </Link>
           ))}
-        </div>
+        </nav>
       </div>
     </header>
   );
