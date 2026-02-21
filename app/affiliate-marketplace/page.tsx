@@ -7,17 +7,17 @@ const products = [
   {
     title: "Atomic Habits",
     description: "Tiny Changes, Remarkable Results — the #1 bestseller for building wealth systems",
-    image: "https://m.media-amazon.com/images/I/81wgcld4wxL._AC_UY327_FMwebp_.jpg"
+    image: "https://i.imgur.com/nM74k28.jpg"
   },
   {
     title: "The Psychology of Money",
     description: "Timeless lessons on wealth, greed, and happiness from Morgan Housel",
-    image: "https://m.media-amazon.com/images/I/71g0gQ6vWAL._AC_UY327_FMwebp_.jpg"
+    image: "https://i.imgur.com/Mzz9g1M.jpg"
   },
   {
     title: "Principles: Life and Work",
     description: "Ray Dalio’s legendary blueprint for radical truth and decision-making at the highest level",
-    image: "https://m.media-amazon.com/images/I/71kD5b3g6gL._AC_UY327_FMwebp_.jpg"
+    image: "https://i.imgur.com/FgOhgNW.jpg"
   }
 ];
 
