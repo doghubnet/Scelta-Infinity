@@ -32,7 +32,7 @@ export default function Header() {
           <InfinityArrowLogo />
           <span className="font-serif text-2xl font-bold text-gold transition duration-300 group-hover:scale-[1.02] group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.55)] md:text-3xl">{company.brandName}</span>
         </Link>
-        <nav className="flex flex-wrap items-center gap-5 text-sm font-medium text-navy/90">
+        <nav aria-label="Primary navigation" className="flex flex-wrap items-center gap-5 text-sm font-medium text-navy/90">
           {navLinks.map(([label, path]) => (
             <Link key={path} href={path} className="transition duration-300 hover:-translate-y-0.5 hover:text-gold">
               {label}

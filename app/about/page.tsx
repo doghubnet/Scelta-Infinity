@@ -5,7 +5,7 @@ import { MotionSection } from "@/components/motion-section";
 
 export default function AboutPage() {
   return (
-    <MotionSection className="section-container">
+    <MotionSection className="section-container bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.10),_transparent_45%),radial-gradient(circle_at_bottom_right,_rgba(10,37,64,0.06),_transparent_40%)]">
       <SectionTitle eyebrow="Brand Story" title="About Scelta Infinity" description="A modern publishing and affiliate showcase established by Gediyon Adamu Yeshitila." />
       <Card>
         <p className="text-lg text-navy/85">
@@ -24,6 +24,7 @@ export default function AboutPage() {
               width={220}
               height={220}
               className="rounded-full border-4 border-[#D4AF37] object-cover ring-4 ring-[#D4AF37]/25"
+              sizes="220px"
             />
           </div>
           <div>

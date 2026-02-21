@@ -22,7 +22,7 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      <MotionSection className="bg-navy text-white">
+      <MotionSection className="bg-navy bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.12),_transparent_40%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.08),_transparent_35%)] text-white">
         <div className="section-container grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.25em] text-gold">Scelta Infinity</p>
@@ -61,7 +61,7 @@ export default function HomePage() {
             <input name="name" required placeholder="Full Name" className="rounded-xl border border-navy/20 p-3" />
             <input name="email" type="email" required placeholder="Email Address" className="rounded-xl border border-navy/20 p-3" />
             <textarea name="message" required placeholder="Message / Question" rows={5} className="rounded-xl border border-navy/20 p-3 md:col-span-2" />
-            <button className="rounded-full bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-navy/90 md:col-span-2 md:w-fit">
+            <button aria-label="Send message" className="rounded-full bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-navy/90 focus-visible:ring-offset-white md:col-span-2 md:w-fit">
               Send Message
             </button>
           </form>

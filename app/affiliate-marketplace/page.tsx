@@ -40,6 +40,7 @@ export default function AffiliateMarketplacePage() {
                 width={500}
                 height={700}
                 className="h-full w-full object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
             <h3 className="font-serif text-xl">{product.title}</h3>

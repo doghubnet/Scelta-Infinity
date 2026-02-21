@@ -19,6 +19,7 @@ export default function BooksPage() {
               width={720}
               height={1080}
               className="h-auto w-full object-cover"
+              sizes="(max-width: 768px) 100vw, 360px"
               priority
             />
           </div>
