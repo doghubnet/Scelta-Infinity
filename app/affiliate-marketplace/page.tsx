@@ -16,7 +16,7 @@ const products = [
   },
   {
     title: "Principles: Life and Work",
-    description: "Ray Dalio’s legendary blueprint for radical truth and decision-making at the highest level",
+    description: "Ray Dalio's legendary blueprint for radical truth and decision-making at the highest level",
     image: "https://i.imgur.com/FgOhgNW.jpg"
   }
 ];
