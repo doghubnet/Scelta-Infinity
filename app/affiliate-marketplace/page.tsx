@@ -10,13 +10,13 @@ const products = [
     image: "https://i.imgur.com/nM74k28.jpg"
   },
   {
-    title: "The Psychology of Money",
-    description: "Timeless lessons on wealth, greed, and happiness from Morgan Housel",
+    title: "Principles: Life and Work",
+    description: "Ray Dalio's legendary blueprint for radical truth and decision-making at the highest level",
     image: "https://i.imgur.com/Mzz9g1M.jpg"
   },
   {
-    title: "Principles: Life and Work",
-    description: "Ray Dalio's legendary blueprint for radical truth and decision-making at the highest level",
+    title: "The Psychology of Money",
+    description: "Timeless lessons on wealth, greed, and happiness from Morgan Housel",
     image: "https://i.imgur.com/FgOhgNW.jpg"
   }
 ];
@@ -33,13 +33,13 @@ export default function AffiliateMarketplacePage() {
       <div className="grid gap-6 md:grid-cols-3">
         {products.map((product) => (
           <Card key={product.title}>
-            <div className="-mx-7 -mt-7 mb-4 overflow-hidden rounded-t-3xl">
+            <div className="-mx-7 -mt-7 mb-4 h-72 overflow-hidden rounded-t-3xl">
               <Image
                 src={product.image}
                 alt={product.title}
                 width={500}
                 height={700}
-                className="h-72 w-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
             <h3 className="font-serif text-xl">{product.title}</h3>
