@@ -19,7 +19,7 @@ export default function AboutPage() {
         <div className="grid items-center gap-8 md:grid-cols-[220px_1fr]">
           <div className="mx-auto">
             <Image
-              src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=900&q=80"
+              src="https://i.imgur.com/5aT67cx.jpg"
               alt="Gediyon Adamu Yeshitila"
               width={220}
               height={220}
