@@ -7,7 +7,7 @@
 }
 
 body {
-  @apply bg-cream text-navy antialiased leading-relaxed;
+  @apply bg-cream text-[17px] text-navy antialiased leading-[1.75];
 }
 
 .section-container {
@@ -20,16 +20,19 @@ body {
 
 @layer base {
   h1 {
-    @apply text-5xl font-bold tracking-tight md:text-6xl;
+    @apply text-5xl font-bold tracking-[-0.025em] md:text-6xl;
   }
+
   h2 {
-    @apply font-bold tracking-tight;
+    @apply text-4xl font-bold tracking-[-0.025em] md:text-5xl;
   }
+
   h3 {
-    @apply font-semibold tracking-tight;
+    @apply text-2xl font-semibold tracking-[-0.025em] md:text-3xl;
   }
+
   p {
-    @apply leading-relaxed;
+    @apply leading-[1.75];
   }
 }
 
