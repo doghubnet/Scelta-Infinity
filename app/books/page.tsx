@@ -14,7 +14,7 @@ export default function BooksPage() {
         <div className="grid gap-8 md:grid-cols-[360px_1fr] md:items-start">
           <div className="overflow-hidden rounded-2xl border border-navy/10 bg-navy/5">
             <Image
-              src="https://i.imgur.com/5KIMc.png"
+              src="https://i.imgur.com/uFKSQs0.jpg"
               alt="THE BILLIONAIRE BLUEPRINT book cover"
               width={720}
               height={1080}
