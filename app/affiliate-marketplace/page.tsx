@@ -33,7 +33,7 @@ export default function AffiliateMarketplacePage() {
       <div className="grid gap-6 md:grid-cols-3">
         {products.map((product) => (
           <Card key={product.title}>
-            <div className="mb-4 overflow-hidden rounded-2xl border border-navy/10 bg-cream/40">
+            <div className="-mx-7 -mt-7 mb-4 overflow-hidden rounded-t-3xl">
               <Image
                 src={product.image}
                 alt={product.title}
