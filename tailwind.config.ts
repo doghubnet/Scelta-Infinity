@@ -13,7 +13,16 @@ const config: Config = {
         cream: "#F9F6EF"
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "sans-serif"],
+        sans: [
+          "var(--font-inter)",
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          "sans-serif"
+        ],
         serif: ["var(--font-playfair)", "Playfair Display", "serif"]
       },
       boxShadow: {

@@ -13,8 +13,6 @@ export default function ContactPage() {
         <div className="space-y-3 rounded-3xl border border-navy/10 bg-white p-8 shadow-luxury">
           <p><strong>Legal name:</strong> {company.legalName}</p>
           <p><strong>Brand:</strong> {company.brandName}</p>
-          <p><strong>Phone:</strong> {company.phone}</p>
-          <p><strong>WhatsApp:</strong> {company.whatsapp}</p>
           <p><strong>Email:</strong> {company.email}</p>
           <p><strong>Fiverr:</strong> <a className="text-gold underline" href={company.fiverr} target="_blank" rel="noreferrer">{company.fiverr}</a></p>
           <p><strong>Upwork:</strong> <a className="text-gold underline" href={company.upwork} target="_blank" rel="noreferrer">{company.upwork}</a></p>

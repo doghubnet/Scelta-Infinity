@@ -6,8 +6,6 @@ export const company = {
     "To deliver high-quality and deliverable eBooks and affiliate marketing products of any type.",
   vision:
     "To become one of the world’s most trusted affiliate marketing platforms by delivering high-quality and lasting products for international clients.",
-  phone: "+251 906 795 434",
-  whatsapp: "+251 906 795 434",
   email: "scelta.infinity@gmail.com",
   fiverr: "https://lnkd.in/dggjP7uk",
   upwork: "https://lnkd.in/dK2DZ7fJ",

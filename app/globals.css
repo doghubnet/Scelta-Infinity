@@ -7,7 +7,7 @@
 }
 
 body {
-  @apply bg-cream text-navy antialiased;
+  @apply bg-cream text-navy antialiased leading-relaxed;
 }
 
 .section-container {
@@ -16,6 +16,21 @@ body {
 
 .gold-gradient {
   background: linear-gradient(120deg, #d4af37 0%, #f3e2a0 45%, #d4af37 100%);
+}
+
+@layer base {
+  h1 {
+    @apply text-5xl font-bold tracking-tight md:text-6xl;
+  }
+  h2 {
+    @apply font-bold tracking-tight;
+  }
+  h3 {
+    @apply font-semibold tracking-tight;
+  }
+  p {
+    @apply leading-relaxed;
+  }
 }
 
 :focus-visible {

@@ -11,8 +11,8 @@ export default function AboutPage() {
         <p className="text-lg text-navy/85">
           {company.brandName} was created as a professional destination where quality eBooks and premium affiliate recommendations are presented with clarity and integrity. Led by {company.legalName}, the brand emphasizes trust, transparent communication, and long-term client value.
         </p>
-        <p className="mt-4 text-navy/85">Mission: {company.mission}</p>
-        <p className="mt-3 text-navy/85">Vision: {company.vision}</p>
+        <p id="mission" className="mt-4 text-navy/85">Mission: {company.mission}</p>
+        <p id="vision" className="mt-3 text-navy/85">Vision: {company.vision}</p>
       </Card>
 
       <Card className="mt-8">
@@ -36,7 +36,7 @@ export default function AboutPage() {
             <p className="mt-2 text-navy/85">
               With a strong background in <strong>digital publishing</strong> and <strong>affiliate marketing</strong>, he is dedicated to delivering <strong>high-quality eBooks</strong> and <strong>trustworthy recommendations</strong> to clients worldwide.
             </p>
-            <p className="mt-2 text-navy/85">
+            <p id="founder" className="mt-2 text-navy/85">
               His <strong>vision</strong> is to build one of the most <strong>respected international platforms</strong> for lasting value and <strong>ethical business growth</strong>.
             </p>
           </div>
