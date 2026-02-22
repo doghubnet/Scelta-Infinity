@@ -3,12 +3,6 @@ import { Card, PrimaryButton, SectionTitle } from "@/components/ui";
 import { affiliateDisclosure, company } from "@/lib/site-data";
 import { MotionSection } from "@/components/motion-section";
 
-const featuredBooks = [
-  "THE BILLIONAIRE BLUEPRINT",
-  "Digital Product Publishing Excellence",
-  "Evergreen Commission Strategy Playbook"
-];
-
 const affiliateHighlights = ["Atomic Habits", "The Psychology of Money", "Principles: Life and Work"];
 
 const testimonials = [
@@ -75,15 +69,31 @@ export default function HomePage() {
           description="Every title is developed with practical insight and publishing quality standards suitable for international readers."
         />
         <div className="grid gap-6 md:grid-cols-3">
-          {featuredBooks.map((book, idx) => (
-            <Card key={book}>
-              <div className="mb-5 aspect-[3/4] rounded-2xl bg-gradient-to-br from-navy to-navy/70 p-4 text-gold">
-                <p className="text-xs uppercase tracking-[0.2em]">Book {idx + 1}</p>
-                <p className="mt-3 font-serif text-2xl leading-tight">{book}</p>
-              </div>
-              <PrimaryButton href="/books">Buy on Amazon</PrimaryButton>
-            </Card>
-          ))}
+          <Card className="overflow-hidden p-0">
+            <div className="aspect-[3/4] w-full">
+              <img src="https://i.imgur.com/uFKSQs0.jpg" alt="THE BILLIONAIRE BLUEPRINT" className="h-full w-full object-cover" />
+            </div>
+            <div className="space-y-4 p-6">
+              <p className="font-serif text-2xl leading-tight text-navy">THE BILLIONAIRE BLUEPRINT</p>
+              <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
+            </div>
+          </Card>
+          <Card className="overflow-hidden p-0">
+            <div className="aspect-[3/4] w-full">
+              <img src="https://imgur.com/a/XKRAjJj" alt="Featured Book 2" className="h-full w-full object-cover" />
+            </div>
+            <div className="p-6">
+              <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
+            </div>
+          </Card>
+          <Card className="overflow-hidden p-0">
+            <div className="aspect-[3/4] w-full">
+              <img src="https://imgur.com/a/duDv8mk" alt="Featured Book 3" className="h-full w-full object-cover" />
+            </div>
+            <div className="p-6">
+              <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
+            </div>
+          </Card>
         </div>
       </MotionSection>
 
