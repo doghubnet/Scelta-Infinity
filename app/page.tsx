@@ -71,16 +71,7 @@ export default function HomePage() {
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="overflow-hidden p-0">
             <div className="aspect-[3/4] w-full">
-              <img src="https://i.imgur.com/uFKSQs0.jpg" alt="THE BILLIONAIRE BLUEPRINT" className="h-full w-full object-cover" />
-            </div>
-            <div className="space-y-4 p-6">
-              <p className="font-serif text-2xl leading-tight text-navy">THE BILLIONAIRE BLUEPRINT</p>
-              <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
-            </div>
-          </Card>
-          <Card className="overflow-hidden p-0">
-            <div className="aspect-[3/4] w-full">
-              <img src="https://imgur.com/a/XKRAjJj" alt="Featured Book 2" className="h-full w-full object-cover" />
+              <img src="https://i.imgur.com/uFKSQs0.jpg" alt="Featured Book 1" className="h-full w-full object-cover" />
             </div>
             <div className="p-6">
               <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
@@ -88,7 +79,15 @@ export default function HomePage() {
           </Card>
           <Card className="overflow-hidden p-0">
             <div className="aspect-[3/4] w-full">
-              <img src="https://imgur.com/a/duDv8mk" alt="Featured Book 3" className="h-full w-full object-cover" />
+              <img src="https://i.imgur.com/cvcjADZ.jpg" alt="Featured Book 2" className="h-full w-full object-cover" />
+            </div>
+            <div className="p-6">
+              <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
+            </div>
+          </Card>
+          <Card className="overflow-hidden p-0">
+            <div className="aspect-[3/4] w-full">
+              <img src="https://i.imgur.com/wefa6yu.jpg" alt="Featured Book 3" className="h-full w-full object-cover" />
             </div>
             <div className="p-6">
               <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
