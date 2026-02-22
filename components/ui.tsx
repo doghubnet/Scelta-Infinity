@@ -15,10 +15,10 @@ export function SectionTitle({
   description: string;
 }) {
   return (
-    <div className="mx-auto mb-12 max-w-3xl text-center">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-gold">{eyebrow}</p>
-      <h2 className="font-serif text-4xl font-extrabold leading-tight text-navy md:text-6xl">{title}</h2>
-      <p className="mt-5 text-lg leading-relaxed text-navy/80">{description}</p>
+    <div className="mx-auto mb-14 max-w-3xl text-center">
+      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-gold">{eyebrow}</p>
+      <h2 className="font-serif text-4xl font-bold tracking-[-0.025em] leading-[1.12] text-navy md:text-6xl">{title}</h2>
+      <p className="mt-6 text-[1.0625rem] leading-[1.75] tracking-[0.005em] text-navy/80">{description}</p>
     </div>
   );
 }

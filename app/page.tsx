@@ -23,18 +23,18 @@ export default function HomePage() {
   return (
     <>
       <MotionSection className="bg-navy bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.12),_transparent_40%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.08),_transparent_35%)] text-white">
-        <div className="section-container grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.25em] text-gold">Scelta Infinity</p>
-            <h1 className="font-serif text-4xl font-bold leading-tight md:text-6xl">
+        <div className="section-container grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="max-w-2xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-gold">Scelta Infinity</p>
+            <h1 className="font-serif text-5xl font-bold tracking-[-0.025em] text-white md:text-7xl">
               Premium eBooks & Trusted Affiliate Recommendations for Global Audiences
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-white/85">
+            <p className="mt-7 max-w-xl text-[1.0625rem] leading-[1.75] tracking-[0.005em] text-white/85">
               Built by {company.legalName}, {company.brandName} is a professional digital showcase focused on
               authority, quality, and long-term value in eBook publishing and affiliate marketing.
             </p>
-            <p className="mt-4 text-gold">Serving ambitious minds worldwide.</p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <p className="mt-5 text-gold/95">Serving ambitious minds worldwide.</p>
+            <div className="mt-10 flex flex-wrap gap-4">
               <PrimaryButton href="/books" className="bg-gold text-navy hover:bg-gold/90">Explore My Books</PrimaryButton>
               <PrimaryButton href="/affiliate-marketplace" className="border border-gold bg-transparent text-gold hover:bg-gold hover:text-navy">View Affiliate Marketplace</PrimaryButton>
             </div>

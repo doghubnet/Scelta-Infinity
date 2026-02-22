@@ -7,11 +7,12 @@
 }
 
 body {
-  @apply bg-cream text-[17px] text-navy antialiased leading-[1.75];
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  @apply bg-cream text-[17px] text-navy antialiased leading-[1.75] tracking-[0.005em];
 }
 
 .section-container {
-  @apply mx-auto max-w-7xl px-6 py-16 md:px-10 lg:py-24;
+  @apply mx-auto w-full max-w-[82rem] px-6 py-24 md:px-12 md:py-32;
 }
 
 .gold-gradient {
@@ -20,19 +21,19 @@ body {
 
 @layer base {
   h1 {
-    @apply text-5xl font-bold tracking-[-0.025em] md:text-6xl;
+    @apply text-5xl font-bold tracking-[-0.025em] leading-[1.08] md:text-7xl;
   }
 
   h2 {
-    @apply text-4xl font-bold tracking-[-0.025em] md:text-5xl;
+    @apply text-4xl font-bold tracking-[-0.025em] leading-[1.12] md:text-6xl;
   }
 
   h3 {
-    @apply text-2xl font-semibold tracking-[-0.025em] md:text-3xl;
+    @apply text-2xl font-semibold tracking-[-0.02em] leading-[1.25] md:text-3xl;
   }
 
   p {
-    @apply leading-[1.75];
+    @apply leading-[1.75] tracking-[0.005em];
   }
 }
 
