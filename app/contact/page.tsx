@@ -16,7 +16,7 @@ export default function ContactPage() {
           <p><strong>Telegram:</strong> <a className="text-gold underline" href={company.telegram}>t.me/scholartransfer</a></p>
           <p><strong>Instagram:</strong> <a className="text-gold underline" href={company.instagram}>@aggregateconsultant</a></p>
         </div>
-        <form action="https://formspree.io/f/your-form-id" method="POST" className="space-y-4 rounded-3xl border border-navy/10 bg-white p-8 shadow-luxury">
+        <form action="https://formspree.io/f/maqddkdo" method="POST" className="space-y-4 rounded-3xl border border-navy/10 bg-white p-8 shadow-luxury">
           <input name="name" required placeholder="Your Name" className="w-full rounded-xl border border-navy/20 p-3" />
           <input name="email" required type="email" placeholder="Your Email" className="w-full rounded-xl border border-navy/20 p-3" />
           <input name="subject" required placeholder="Subject" className="w-full rounded-xl border border-navy/20 p-3" />
