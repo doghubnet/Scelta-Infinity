@@ -9,6 +9,10 @@ type MotionProps = React.HTMLAttributes<HTMLElement> & {
   viewport?: unknown;
   transition?: unknown;
   variants?: unknown;
+  drag?: unknown;
+  dragConstraints?: unknown;
+  dragElastic?: unknown;
+  onDragEnd?: unknown;
 };
 
 function createMotionComponent(tag: keyof JSX.IntrinsicElements) {
@@ -23,6 +27,10 @@ function createMotionComponent(tag: keyof JSX.IntrinsicElements) {
       viewport,
       transition,
       variants,
+      drag,
+      dragConstraints,
+      dragElastic,
+      onDragEnd,
       ...rest
     },
     ref
@@ -35,6 +43,10 @@ function createMotionComponent(tag: keyof JSX.IntrinsicElements) {
     void viewport;
     void transition;
     void variants;
+    void drag;
+    void dragConstraints;
+    void dragElastic;
+    void onDragEnd;
     return React.createElement(tag, { ...rest, ref }, children);
   });
 }

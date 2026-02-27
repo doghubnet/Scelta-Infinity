@@ -257,6 +257,16 @@ export default function HomePage() {
                 initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
                 animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
+                drag={reduceMotion ? false : "x"}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.25}
+                onDragEnd={(_, info) => {
+                  if (info.offset.x > 60) {
+                    setActiveTestimonial((activeTestimonial - 1 + testimonials.length) % testimonials.length);
+                  } else if (info.offset.x < -60) {
+                    setActiveTestimonial((activeTestimonial + 1) % testimonials.length);
+                  }
+                }}
               >
                 <Card className="border-gold/25">
                   <div className="flex flex-col items-center text-center">

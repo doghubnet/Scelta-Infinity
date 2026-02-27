@@ -37,11 +37,11 @@ export default function Header() {
   const mobileMenuVariants = reduceMotion
     ? {
         hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { duration: 0.3, staggerChildren: 0.08 } }
+        visible: { opacity: 1, transition: { duration: 0.3, staggerChildren: 0.05 } }
       }
     : {
         hidden: { opacity: 0, y: -24 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut", staggerChildren: 0.08 } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut", staggerChildren: 0.05 } }
       };
 
   const mobileItemVariants = reduceMotion
