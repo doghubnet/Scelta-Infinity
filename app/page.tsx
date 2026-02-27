@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Card, PrimaryButton, SectionTitle } from "@/components/ui";
@@ -202,15 +203,15 @@ export default function HomePage() {
         <SectionTitle eyebrow="Featured Portfolio" title="Books Crafted for Real-World Value" description="Every title is developed with practical insight and publishing quality standards suitable for international readers." />
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="overflow-hidden p-0">
-            <div className="aspect-[3/4] w-full"><img src="https://i.imgur.com/uFKSQs0.jpg" alt="Featured Book 1" className="h-full w-full object-cover" /></div>
+            <div className="relative aspect-[3/4] w-full"><Image src="https://i.imgur.com/uFKSQs0.jpg" alt="Featured Book 1 cover" fill className="object-cover" priority sizes="(min-width: 768px) 33vw, 100vw" /></div>
             <div className="p-6"><PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton></div>
           </Card>
           <Card className="overflow-hidden p-0">
-            <div className="aspect-[3/4] w-full"><img src="https://i.imgur.com/cvcjADZ.jpg" alt="Featured Book 2" className="h-full w-full object-cover" /></div>
+            <div className="relative aspect-[3/4] w-full"><Image src="https://i.imgur.com/cvcjADZ.jpg" alt="Featured Book 2 cover" fill className="object-cover" sizes="(min-width: 768px) 33vw, 100vw" /></div>
             <div className="p-6"><PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton></div>
           </Card>
           <Card className="overflow-hidden p-0">
-            <div className="aspect-[3/4] w-full"><img src="https://i.imgur.com/wefa6yu.jpg" alt="Featured Book 3" className="h-full w-full object-cover" /></div>
+            <div className="relative aspect-[3/4] w-full"><Image src="https://i.imgur.com/wefa6yu.jpg" alt="Featured Book 3 cover" fill className="object-cover" sizes="(min-width: 768px) 33vw, 100vw" /></div>
             <div className="p-6"><PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton></div>
           </Card>
         </div>
@@ -260,7 +261,7 @@ export default function HomePage() {
                 drag={reduceMotion ? false : "x"}
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.25}
-                onDragEnd={(_, info) => {
+                onDragEnd={(event, info) => {
                   if (info.offset.x > 60) {
                     setActiveTestimonial((activeTestimonial - 1 + testimonials.length) % testimonials.length);
                   } else if (info.offset.x < -60) {
@@ -270,7 +271,7 @@ export default function HomePage() {
               >
                 <Card className="border-gold/25">
                   <div className="flex flex-col items-center text-center">
-                    <img src={testimonials[activeTestimonial].photo} alt={testimonials[activeTestimonial].name} className="h-16 w-16 rounded-full border-2 border-gold/70" />
+                    <Image src={testimonials[activeTestimonial].photo} alt={`${testimonials[activeTestimonial].name} portrait`} width={64} height={64} className="h-16 w-16 rounded-full border-2 border-gold/70" unoptimized />
                     <p className="mt-5 text-navy/85">“{testimonials[activeTestimonial].quote}”</p>
                     <p className="mt-4 font-semibold text-navy">{testimonials[activeTestimonial].name}</p>
                     <p className="text-sm text-navy/70">{testimonials[activeTestimonial].country}</p>
