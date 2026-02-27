@@ -8,6 +8,7 @@ type MotionProps = React.HTMLAttributes<HTMLElement> & {
   whileTap?: unknown;
   viewport?: unknown;
   transition?: unknown;
+  variants?: unknown;
 };
 
 function createMotionComponent(tag: keyof JSX.IntrinsicElements) {
@@ -21,6 +22,7 @@ function createMotionComponent(tag: keyof JSX.IntrinsicElements) {
       whileTap,
       viewport,
       transition,
+      variants,
       ...rest
     },
     ref
@@ -32,6 +34,7 @@ function createMotionComponent(tag: keyof JSX.IntrinsicElements) {
     void whileTap;
     void viewport;
     void transition;
+    void variants;
     return React.createElement(tag, { ...rest, ref }, children);
   });
 }

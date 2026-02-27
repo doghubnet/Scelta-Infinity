@@ -31,7 +31,7 @@ export default function ContactPage() {
             <p className="flex items-center gap-3"><Facebook className="h-4 w-4 shrink-0 text-gold" /> <a className="hover:text-gold" href={company.facebook} target="_blank" rel="noreferrer">Facebook</a></p>
           </div>
         </div>
-        <form action="https://formspree.io/f/your-form-id" method="POST" className="space-y-4 rounded-3xl border border-navy/10 bg-white p-8 shadow-luxury">
+        <form action="https://formspree.io/f/maqddkdo" method="POST" className="space-y-4 rounded-3xl border border-navy/10 bg-white p-8 shadow-luxury">
           <input name="name" required placeholder="Your Name" className="w-full rounded-xl border border-navy/20 p-3" />
           <input name="email" required type="email" placeholder="Your Email" className="w-full rounded-xl border border-navy/20 p-3" />
           <input name="subject" required placeholder="Subject" className="w-full rounded-xl border border-navy/20 p-3" />

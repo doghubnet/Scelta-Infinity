@@ -6,15 +6,33 @@ import { ReactNode } from "react";
 export function MotionSection({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const reduceMotion = useReducedMotion();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut", delay, staggerChildren: 0.08 }
+    }
+  };
+
+  const childVariants = reduceMotion
+    ? {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.45, ease: "easeOut" } }
+      }
+    : {
+        hidden: { opacity: 0, y: 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+      };
+
   return (
     <motion.section
-      initial={reduceMotion ? undefined : { opacity: 0, y: 28 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={reduceMotion ? undefined : { once: true, amount: 0.2 }}
-      transition={reduceMotion ? undefined : { duration: 0.6, ease: "easeOut", delay }}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
       className={className}
     >
-      {children}
+      <motion.div variants={childVariants}>{children}</motion.div>
     </motion.section>
   );
 }

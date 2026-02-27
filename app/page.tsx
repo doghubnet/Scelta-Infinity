@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { Card, PrimaryButton, SectionTitle } from "@/components/ui";
 import { affiliateDisclosure, company } from "@/lib/site-data";
 import { MotionSection } from "@/components/motion-section";
+import { motion, useReducedMotion } from "framer-motion";
 
 const affiliateHighlights = ["Atomic Habits", "The Psychology of Money", "Principles: Life and Work"];
 
@@ -14,35 +17,66 @@ const testimonials = [
 ];
 
 export default function HomePage() {
+  const reduceMotion = useReducedMotion();
+
+  const heroVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.08 }
+    }
+  };
+
+  const heroItemVariants = reduceMotion
+    ? {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.45, ease: "easeOut" } }
+      }
+    : {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+      };
+
   return (
     <>
-      <MotionSection className="bg-navy bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.12),_transparent_40%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.08),_transparent_35%)] text-white">
-        <div className="section-container grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="max-w-2xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-gold">Scelta Infinity</p>
-            <h1 className="font-serif text-5xl font-bold tracking-[-0.025em] text-white md:text-7xl">
-              Premium eBooks & Trusted Affiliate Recommendations for Global Audiences
-            </h1>
-            <p className="mt-7 max-w-xl text-[1.0625rem] leading-[1.75] tracking-[0.005em] text-white/85">
-              Built by {company.legalName}, {company.brandName} is a professional digital showcase focused on
-              authority, quality, and long-term value in eBook publishing and affiliate marketing.
-            </p>
-            <p className="mt-5 text-gold/95">Serving ambitious minds worldwide.</p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <PrimaryButton href="/books" className="bg-gold text-navy hover:bg-gold/90">Explore My Books</PrimaryButton>
-              <PrimaryButton href="/affiliate-marketplace" className="border border-gold bg-transparent text-gold hover:bg-gold hover:text-navy">View Affiliate Marketplace</PrimaryButton>
+      <section className="relative isolate overflow-hidden text-white">
+        <div className="absolute inset-0 -z-20 bg-[url('https://i.postimg.cc/Z5Mqj0XJ/pexels-googledeepmind-18069814-(1).jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-navy/65 to-navy" />
+        <div className="section-container">
+          <motion.div
+            variants={heroVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid gap-12 lg:grid-cols-2 lg:items-center"
+          >
+            <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
+              <motion.p variants={heroItemVariants} className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-gold">Scelta Infinity</motion.p>
+              <motion.h1 variants={heroItemVariants} className="font-serif text-5xl font-bold tracking-[-0.025em] text-white md:text-7xl">
+                Premium eBooks & Trusted Affiliate Recommendations for Global Audiences
+              </motion.h1>
+              <motion.p variants={heroItemVariants} className="mt-7 max-w-xl text-[1.0625rem] leading-[1.75] tracking-[0.005em] text-white/85 lg:max-w-none">
+                Built by {company.legalName}, {company.brandName} is a professional digital showcase focused on
+                authority, quality, and long-term value in eBook publishing and affiliate marketing.
+              </motion.p>
+              <motion.p variants={heroItemVariants} className="mt-5 text-gold/95">Serving ambitious minds worldwide.</motion.p>
+              <motion.div variants={heroItemVariants} className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
+                <PrimaryButton href="/books" className="bg-gold text-navy hover:bg-gold/90">Explore My Books</PrimaryButton>
+                <PrimaryButton href="/affiliate-marketplace" className="border border-gold bg-transparent text-gold hover:bg-gold hover:text-navy">View Affiliate Marketplace</PrimaryButton>
+              </motion.div>
             </div>
-          </div>
-          <Card className="bg-white/10 text-white backdrop-blur">
-            <h2 className="font-serif text-2xl">Trust Signals</h2>
-            <ul className="mt-6 space-y-4 text-sm text-white/90">
-              <li>✓ Clear external redirection model (no onsite payment processing)</li>
-              <li>✓ Direct links to Fiverr, Upwork, Amazon-focused products, and contact channels</li>
-              <li>✓ Transparent affiliate disclosure and legal pages</li>
-            </ul>
-          </Card>
+            <motion.div variants={heroItemVariants}>
+              <Card className="bg-white/10 text-white backdrop-blur">
+                <h2 className="font-serif text-2xl">Trust Signals</h2>
+                <ul className="mt-6 space-y-4 text-sm text-white/90">
+                  <li>✓ Clear external redirection model (no onsite payment processing)</li>
+                  <li>✓ Direct links to Fiverr, Upwork, Amazon-focused products, and contact channels</li>
+                  <li>✓ Transparent affiliate disclosure and legal pages</li>
+                </ul>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
-      </MotionSection>
+      </section>
 
       <MotionSection className="section-container" delay={0.03}>
         <SectionTitle

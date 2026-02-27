@@ -28,9 +28,9 @@ export function PrimaryButton({ href, children, className }: { href: string; chi
 
   return (
     <motion.div
-      whileHover={reduceMotion ? undefined : { scale: 1.04, y: -1 }}
+      whileHover={reduceMotion ? { opacity: 0.95 } : { scale: 1.02, y: -2 }}
       whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-      transition={reduceMotion ? undefined : { duration: 0.2 }}
+      transition={{ duration: 0.24 }}
     >
       <Link
         href={href}
@@ -50,8 +50,8 @@ export function Card({ children, className }: { children: ReactNode; className?:
 
   return (
     <motion.article
-      whileHover={reduceMotion ? undefined : { scale: 1.015, y: -4 }}
-      transition={reduceMotion ? undefined : { duration: 0.25 }}
+      whileHover={reduceMotion ? { opacity: 0.96 } : { scale: 1.02, y: -4 }}
+      transition={{ duration: 0.24 }}
       className={cn(
         "rounded-3xl border border-navy/10 bg-white p-7 shadow-luxury transition hover:border-gold/40 hover:shadow-[0_24px_40px_-20px_rgba(212,175,55,0.45)]",
         className

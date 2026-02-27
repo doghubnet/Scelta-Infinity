@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, useReducedMotion } from "framer-motion";
 import { navLinks, company } from "@/lib/site-data";
 
 function InfinityArrowLogo() {
@@ -25,6 +29,9 @@ function InfinityArrowLogo() {
 }
 
 export default function Header() {
+  const pathname = usePathname();
+  const reduceMotion = useReducedMotion();
+
   return (
     <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur">
       <div className="mx-auto flex w-full max-w-[82rem] flex-wrap items-center justify-between gap-4 px-6 py-3 md:px-12">
@@ -33,11 +40,28 @@ export default function Header() {
           <span className="font-serif text-2xl font-bold text-gold transition duration-300 group-hover:scale-[1.02] group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.55)] md:text-3xl">{company.brandName}</span>
         </Link>
         <nav aria-label="Primary navigation" className="flex flex-wrap items-center gap-5 text-sm font-semibold tracking-[0.01em] text-navy/90">
-          {navLinks.map(([label, path]) => (
-            <Link key={path} href={path} className="transition duration-300 hover:-translate-y-0.5 hover:text-gold hover:opacity-95">
-              {label}
-            </Link>
-          ))}
+          {navLinks.map(([label, path]) => {
+            const isActive = pathname === path;
+            return (
+              <motion.div
+                key={path}
+                whileHover={reduceMotion ? { opacity: 0.92 } : { scale: 1.02 }}
+                transition={{ duration: 0.24 }}
+                className="relative"
+              >
+                <Link href={path} className="transition duration-300 hover:text-gold">
+                  {label}
+                </Link>
+                <motion.span
+                  className="absolute -bottom-1 left-0 h-[2px] rounded-full bg-gold"
+                  initial={false}
+                  animate={{ width: isActive ? "100%" : "0%", opacity: isActive ? 1 : 0.9 }}
+                  whileHover={{ width: "100%", opacity: 1 }}
+                  transition={{ duration: 0.24, ease: "easeOut" }}
+                />
+              </motion.div>
+            );
+          })}
         </nav>
       </div>
     </header>
