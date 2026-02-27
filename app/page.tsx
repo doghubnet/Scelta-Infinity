@@ -108,7 +108,7 @@ const faqs = [
 
 export default function HomePage() {
   const reduceMotion = useReducedMotion();
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   useEffect(() => {
@@ -294,7 +294,7 @@ export default function HomePage() {
                   <div key={item.q} className="rounded-2xl border border-gold/30 bg-white shadow-luxury">
                     <button type="button" onClick={() => setOpenFaq(isOpen ? null : idx)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left">
                       <span className="font-semibold text-navy">{item.q}</span>
-                      <span className="text-gold">{isOpen ? "−" : "+"}</span>
+                      <span className={`text-gold transition-transform duration-300 ease-out ${isOpen ? "rotate-180" : "rotate-0"}`}>▼</span>
                     </button>
                     <motion.div
                       initial={false}
