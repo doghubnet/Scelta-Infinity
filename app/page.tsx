@@ -88,7 +88,7 @@ export default function HomePage() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.08 }
+      transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.1 }
     }
   };
 
@@ -98,8 +98,8 @@ export default function HomePage() {
         visible: { opacity: 1, transition: { duration: 0.45, ease: "easeOut" } }
       }
     : {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
       };
 
   return (
@@ -119,7 +119,7 @@ export default function HomePage() {
                 <span className="inline-block h-6 w-6 rounded-full border border-gold/80" aria-hidden="true" />
                 Scelta Infinity
               </motion.p>
-              <motion.h1 variants={heroItemVariants} className="font-serif text-5xl font-bold tracking-[-0.025em] text-white md:text-7xl">
+              <motion.h1 variants={heroItemVariants} className="text-5xl font-bold tracking-[-0.04em] text-white md:text-7xl">
                 Premium eBooks & Trusted Affiliate Recommendations for Global Audiences
               </motion.h1>
               <motion.p variants={heroItemVariants} className="mt-7 max-w-xl text-[1.0625rem] leading-[1.75] tracking-[0.005em] text-white/85 lg:max-w-none">

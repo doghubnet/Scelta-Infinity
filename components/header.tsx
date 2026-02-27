@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { navLinks, company } from "@/lib/site-data";
 
@@ -31,22 +32,48 @@ function InfinityArrowLogo() {
 export default function Header() {
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const mobileMenuVariants = reduceMotion
+    ? {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.3, staggerChildren: 0.08 } }
+      }
+    : {
+        hidden: { opacity: 0, y: -24 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut", staggerChildren: 0.08 } }
+      };
+
+  const mobileItemVariants = reduceMotion
+    ? { hidden: { opacity: 0 }, visible: { opacity: 1 } }
+    : { hidden: { opacity: 0, y: -10 }, visible: { opacity: 1, y: 0 } };
 
   return (
     <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur">
       <div className="mx-auto flex w-full max-w-[82rem] flex-wrap items-center justify-between gap-4 px-6 py-3 md:px-12">
         <Link href="/" className="group flex items-center gap-3" aria-label="Scelta Infinity home">
           <InfinityArrowLogo />
-          <span className="font-serif text-2xl font-bold text-gold transition duration-300 group-hover:scale-[1.02] group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.55)] md:text-3xl">{company.brandName}</span>
+          <span className="text-2xl font-bold text-gold transition duration-300 group-hover:scale-[1.02] group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.55)] md:text-3xl">{company.brandName}</span>
         </Link>
-        <nav aria-label="Primary navigation" className="flex flex-wrap items-center gap-5 text-sm font-semibold tracking-[0.01em] text-navy/90">
+
+        <button
+          type="button"
+          className="rounded-md border border-navy/20 px-3 py-2 text-sm font-semibold text-navy md:hidden"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+        >
+          Menu
+        </button>
+
+        <nav aria-label="Primary navigation" className="hidden flex-wrap items-center gap-5 text-sm font-semibold tracking-[0.01em] text-navy/90 md:flex">
           {navLinks.map(([label, path]) => {
             const isActive = pathname === path;
             return (
               <motion.div
                 key={path}
                 whileHover={reduceMotion ? { opacity: 0.92 } : { scale: 1.02 }}
-                transition={{ duration: 0.24 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 className="relative"
               >
                 <Link href={path} className="transition duration-300 hover:text-gold">
@@ -57,12 +84,40 @@ export default function Header() {
                   initial={false}
                   animate={{ width: isActive ? "100%" : "0%", opacity: isActive ? 1 : 0.9 }}
                   whileHover={{ width: "100%", opacity: 1 }}
-                  transition={{ duration: 0.24, ease: "easeOut" }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                 />
               </motion.div>
             );
           })}
         </nav>
+
+        {menuOpen && (
+          <motion.nav
+            id="mobile-nav"
+            aria-label="Mobile navigation"
+            variants={mobileMenuVariants}
+            initial="hidden"
+            animate="visible"
+            className="w-full rounded-2xl border border-navy/10 bg-white p-4 shadow-luxury md:hidden"
+          >
+            <div className="flex flex-col gap-3">
+              {navLinks.map(([label, path]) => {
+                const isActive = pathname === path;
+                return (
+                  <motion.div key={path} variants={mobileItemVariants}>
+                    <Link
+                      href={path}
+                      onClick={() => setMenuOpen(false)}
+                      className={`block rounded-lg px-3 py-2 text-sm font-semibold ${isActive ? "text-gold" : "text-navy"}`}
+                    >
+                      {label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.nav>
+        )}
       </div>
     </header>
   );

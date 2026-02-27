@@ -17,7 +17,7 @@ export function SectionTitle({
   return (
     <div className="mx-auto mb-14 max-w-3xl text-center">
       <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-gold">{eyebrow}</p>
-      <h2 className="font-serif text-4xl font-bold tracking-[-0.025em] leading-[1.12] text-navy md:text-6xl">{title}</h2>
+      <h2 className="text-4xl font-bold tracking-[-0.025em] leading-[1.1] text-navy md:text-5xl">{title}</h2>
       <p className="mt-6 text-[1.0625rem] leading-[1.75] tracking-[0.005em] text-navy/80">{description}</p>
     </div>
   );
@@ -30,7 +30,7 @@ export function PrimaryButton({ href, children, className }: { href: string; chi
     <motion.div
       whileHover={reduceMotion ? { opacity: 0.95 } : { scale: 1.02, y: -2 }}
       whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-      transition={{ duration: 0.24 }}
+      transition={{ duration: 0.24, ease: "easeOut" }}
     >
       <Link
         href={href}
@@ -51,7 +51,7 @@ export function Card({ children, className }: { children: ReactNode; className?:
   return (
     <motion.article
       whileHover={reduceMotion ? { opacity: 0.96 } : { scale: 1.02, y: -4 }}
-      transition={{ duration: 0.24 }}
+      transition={{ duration: 0.24, ease: "easeOut" }}
       className={cn(
         "rounded-3xl border border-navy/10 bg-white p-7 shadow-luxury transition hover:border-gold/40 hover:shadow-[0_24px_40px_-20px_rgba(212,175,55,0.45)]",
         className
