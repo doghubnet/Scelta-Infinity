@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { Card, PrimaryButton, SectionTitle } from "@/components/ui";
 import { affiliateDisclosure, company } from "@/lib/site-data";
 import { MotionSection } from "@/components/motion-section";
@@ -16,8 +17,72 @@ const testimonials = [
   "Benjamin Duke (Canada): “Professional, trustworthy, and truly international in perspective.”"
 ];
 
+const newsItems = [
+  {
+    title: "New Book Release – The Billionaire Blueprint",
+    description: "Now available on Amazon",
+    href: "#"
+  },
+  {
+    title: "Affiliate Program Update – Higher Commissions for Premium Products",
+    description: "New partner incentives are now available for top-performing affiliates.",
+    href: "#"
+  },
+  {
+    title: "Global Reader Milestone – 40+ Countries Reached",
+    description: "Our publishing and affiliate insights now serve readers across more than 40 countries.",
+    href: "#"
+  },
+  {
+    title: "Upcoming Masterclass – Building Lasting Affiliate Income",
+    description: "A practical training session is coming soon for growth-focused creators.",
+    href: "#"
+  }
+];
+
+const audienceTags = [
+  "Aspiring Entrepreneurs",
+  "Affiliate Marketers",
+  "Self-Improvement Seekers",
+  "International Readers",
+  "Business Builders",
+  "Wealth Mindset Enthusiasts"
+];
+
+const faqs = [
+  {
+    q: "Is this suitable for beginners?",
+    a: "Yes, the content is designed for both beginners and experienced entrepreneurs who want to build lasting value through eBooks and affiliate marketing."
+  },
+  {
+    q: "Do you support multiple currencies?",
+    a: "Yes, all purchases are handled through Amazon, which supports multiple currencies depending on your location."
+  },
+  {
+    q: "Is this only for one country?",
+    a: "No, the books and recommendations are available worldwide. See the supported countries upon purchase on Amazon."
+  },
+  {
+    q: "What if I have questions after purchase?",
+    a: "You can reach out via the contact form or email scelta.infinity@gmail.com. We respond within 24 hours."
+  },
+  {
+    q: "Are partners included?",
+    a: "Yes, we welcome affiliate partners and collaborations. Feel free to reach out through the contact form."
+  },
+  {
+    q: "Can I access content on mobile?",
+    a: "Yes, the website is fully responsive and works perfectly on all mobile devices."
+  },
+  {
+    q: "Do bundles save money?",
+    a: "Yes, we offer bundle deals that provide significant savings compared to purchasing individually."
+  }
+];
+
 export default function HomePage() {
   const reduceMotion = useReducedMotion();
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const heroVariants = {
     hidden: { opacity: 0 },
@@ -50,7 +115,10 @@ export default function HomePage() {
             className="grid gap-12 lg:grid-cols-2 lg:items-center"
           >
             <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
-              <motion.p variants={heroItemVariants} className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-gold">Scelta Infinity</motion.p>
+              <motion.p variants={heroItemVariants} className="mb-4 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.24em] text-gold">
+                <span className="inline-block h-6 w-6 rounded-full border border-gold/80" aria-hidden="true" />
+                Scelta Infinity
+              </motion.p>
               <motion.h1 variants={heroItemVariants} className="font-serif text-5xl font-bold tracking-[-0.025em] text-white md:text-7xl">
                 Premium eBooks & Trusted Affiliate Recommendations for Global Audiences
               </motion.h1>
@@ -78,22 +146,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <MotionSection className="section-container" delay={0.03}>
-        <SectionTitle
-          eyebrow="Contact"
-          title="Get In Touch"
-          description="Have a question about books, services, or affiliate collaborations? Send a message directly."
-        />
-        <Card className="mx-auto max-w-4xl">
-          <form action="https://formspree.io/f/maqddkdo" method="POST" className="grid gap-4 md:grid-cols-2">
-            <input name="name" required placeholder="Full Name" className="rounded-xl border border-navy/20 p-3" />
-            <input name="email" type="email" required placeholder="Email Address" className="rounded-xl border border-navy/20 p-3" />
-            <textarea name="message" required placeholder="Message / Question" rows={5} className="rounded-xl border border-navy/20 p-3 md:col-span-2" />
-            <button aria-label="Send message" className="rounded-full bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-navy/90 focus-visible:ring-offset-white md:col-span-2 md:w-fit">
-              Send Message
-            </button>
-          </form>
-        </Card>
+      <MotionSection className="bg-white" delay={0.03}>
+        <div className="section-container">
+          <SectionTitle
+            eyebrow="Updates"
+            title="Latest News & Opportunities"
+            description="Stay informed with new releases, partnership opportunities, and growth milestones across the Scelta Infinity ecosystem."
+          />
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {newsItems.map((item) => (
+              <Card key={item.title} className="flex h-full flex-col justify-between">
+                <div>
+                  <h3 className="font-serif text-xl text-navy">{item.title}</h3>
+                  <p className="mt-4 text-navy/80">{item.description}</p>
+                </div>
+                <div className="mt-6">
+                  <PrimaryButton href={item.href}>Read more</PrimaryButton>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
       </MotionSection>
 
       <MotionSection className="section-container" delay={0.05}>
@@ -145,6 +218,7 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
+
       <MotionSection className="section-container" delay={0.1}>
         <SectionTitle
           eyebrow="Client Proof"
@@ -160,7 +234,7 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-white" delay={0.12}>
+      <MotionSection className="bg-white" delay={0.11}>
         <div className="section-container">
           <SectionTitle
             eyebrow="About Us"
@@ -174,11 +248,74 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <section className="bg-navy py-8 text-center text-sm text-white/90">
-        <p>{affiliateDisclosure}</p>
-        <p className="mt-2">All purchases are completed on third-party platforms such as Amazon KDP or affiliate partner sites.</p>
-        <Link href="/affiliate-disclosure" className="mt-2 inline-block text-gold underline">Read full affiliate disclosure</Link>
-      </section>
+      <MotionSection className="bg-navy py-8 text-center text-sm text-white/90" delay={0.12}>
+        <div className="section-container py-0 md:py-0">
+          <p>{affiliateDisclosure}</p>
+          <p className="mt-2">All purchases are completed on third-party platforms such as Amazon KDP or affiliate partner sites.</p>
+          <Link href="/affiliate-disclosure" className="mt-2 inline-block text-gold underline">Read full affiliate disclosure</Link>
+        </div>
+      </MotionSection>
+
+      <MotionSection className="bg-white" delay={0.14}>
+        <div className="section-container">
+          <SectionTitle
+            eyebrow="Growth Framework"
+            title="The Strategy Behind Every Success"
+            description="Built for readers and builders who value proven execution, measurable progress, and long-term growth."
+          />
+
+          <div>
+            <h3 className="text-center font-serif text-3xl text-navy">Real Reader Results</h3>
+            <div className="mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+              {testimonials.map((item) => (
+                <Card key={item} className="min-w-[85%] snap-start border-gold/25 md:min-w-0">
+                  <p className="text-navy/85">{item}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <h3 className="text-center font-serif text-3xl text-navy">Who This Is Perfect For</h3>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {audienceTags.map((tag) => (
+                <span key={tag} className="rounded-full border border-gold/40 bg-cream px-5 py-2 text-sm font-semibold text-navy">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16 mx-auto max-w-4xl">
+            <h3 className="text-center font-serif text-3xl text-navy">FAQ</h3>
+            <div className="mt-8 space-y-4">
+              {faqs.map((item, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div key={item.q} className="rounded-2xl border border-gold/25 bg-white shadow-luxury">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : idx)}
+                      className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                    >
+                      <span className="font-semibold text-navy">{item.q}</span>
+                      <span className="text-gold">{isOpen ? "−" : "+"}</span>
+                    </button>
+                    <motion.div
+                      initial={false}
+                      animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                      transition={{ duration: reduceMotion ? 0.15 : 0.24, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-6 pb-5 text-navy/80">{item.a}</p>
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </MotionSection>
     </>
   );
 }

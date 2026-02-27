@@ -29,7 +29,7 @@ body {
   }
 
   h3 {
-    @apply text-2xl font-semibold tracking-[-0.02em] leading-[1.25] md:text-3xl;
+    @apply text-2xl font-bold tracking-[-0.025em] leading-[1.25] md:text-3xl;
   }
 
   p {
