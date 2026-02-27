@@ -39,8 +39,18 @@ export default function AboutPage() {
         <p className="text-lg text-navy/85">
           {company.brandName} was created as a professional destination where quality eBooks and premium affiliate recommendations are presented with clarity and integrity. Led by {company.legalName}, the brand emphasizes trust, transparent communication, and long-term client value.
         </p>
-        <p id="mission" className="mt-4 text-navy/85">Mission: {company.mission}</p>
-        <p id="vision" className="mt-3 text-navy/85">Vision: {company.vision}</p>
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <article id="mission" className="rounded-2xl border border-navy/10 bg-cream/40 p-6 md:border-r-4 md:border-r-gold">
+            <span className="mb-4 block h-1 w-12 rounded-full bg-gold" />
+            <h3 className="text-3xl font-bold tracking-[-0.025em] leading-[1.1] text-navy">Mission</h3>
+            <p className="mt-4 text-navy/85">{company.mission}</p>
+          </article>
+          <article id="vision" className="rounded-2xl border border-navy/10 bg-cream/40 p-6">
+            <span className="mb-4 block h-1 w-12 rounded-full bg-gold" />
+            <h3 className="text-3xl font-bold tracking-[-0.025em] leading-[1.1] text-navy">Vision</h3>
+            <p className="mt-4 text-navy/85">{company.vision}</p>
+          </article>
+        </div>
       </Card>
 
       <section className="mt-8 rounded-3xl bg-navy p-8 md:p-10">
