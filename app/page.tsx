@@ -291,7 +291,7 @@ export default function HomePage() {
               {faqs.map((item, idx) => {
                 const isOpen = openFaq === idx;
                 return (
-                  <div key={item.q} className="rounded-2xl border border-gold/30 bg-white shadow-luxury">
+                  <div key={item.q} className={`rounded-2xl border bg-white shadow-luxury transition-all duration-300 ease-out ${isOpen ? "border-gold/60 shadow-[0_24px_40px_-24px_rgba(212,175,55,0.55)]" : "border-navy/10"}`}>
                     <button type="button" onClick={() => setOpenFaq(isOpen ? null : idx)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left">
                       <span className="font-semibold text-navy">{item.q}</span>
                       <span className={`text-gold transition-transform duration-300 ease-out ${isOpen ? "rotate-180" : "rotate-0"}`}>▼</span>
