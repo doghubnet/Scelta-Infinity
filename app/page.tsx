@@ -261,8 +261,7 @@ export default function HomePage() {
                 drag={reduceMotion ? false : "x"}
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.25}
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                onDragEnd={(_event: any, info: any) => {
+                onDragEnd={(event, info) => {
                   if (info.offset.x > 60) {
                     setActiveTestimonial((activeTestimonial - 1 + testimonials.length) % testimonials.length);
                   } else if (info.offset.x < -60) {
