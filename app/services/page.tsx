@@ -1,9 +1,10 @@
+import { MotionSection } from "@/components/motion-section";
 import { Card, PrimaryButton, SectionTitle } from "@/components/ui";
 import { company } from "@/lib/site-data";
 
 export default function ServicesPage() {
   return (
-    <section className="section-container">
+    <MotionSection className="section-container">
       <SectionTitle eyebrow="Professional Services" title="Hire Scelta Infinity" description="Work directly through trusted global freelance platforms for digital publishing and affiliate marketing support." />
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
@@ -17,6 +18,6 @@ export default function ServicesPage() {
           <PrimaryButton href={company.upwork} className="mt-6">View Upwork Profile</PrimaryButton>
         </Card>
       </div>
-    </section>
+    </MotionSection>
   );
 }

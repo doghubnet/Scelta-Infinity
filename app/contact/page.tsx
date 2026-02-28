@@ -6,12 +6,13 @@ import {
   Mail,
   Send
 } from "lucide-react";
+import { MotionSection } from "@/components/motion-section";
 import { SectionTitle } from "@/components/ui";
 import { company } from "@/lib/site-data";
 
 export default function ContactPage() {
   return (
-    <section className="section-container">
+    <MotionSection className="section-container">
       <SectionTitle
         eyebrow="Contact Us"
         title="Let’s Connect Professionally"
@@ -40,6 +41,6 @@ export default function ContactPage() {
           <p className="text-xs text-navy/70">Replace the Formspree endpoint with your live ID before launch.</p>
         </form>
       </div>
-    </section>
+    </MotionSection>
   );
 }

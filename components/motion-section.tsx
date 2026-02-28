@@ -6,23 +6,23 @@ import { ReactNode } from "react";
 export function MotionSection({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const reduceMotion = useReducedMotion();
 
+  if (reduceMotion) {
+    return <section className={className}>{children}</section>;
+  }
+
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
+      y: 0,
       transition: { duration: 0.6, ease: "easeOut", delay, staggerChildren: 0.08 }
     }
   };
 
-  const childVariants = reduceMotion
-    ? {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { duration: 0.45, ease: "easeOut" } }
-      }
-    : {
-        hidden: { opacity: 0, y: 24 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-      };
+  const childVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
 
   return (
     <motion.section

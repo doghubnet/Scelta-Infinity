@@ -83,7 +83,7 @@ export default function Header() {
                   className="absolute -bottom-1 left-0 h-[2px] rounded-full bg-gold"
                   initial={false}
                   animate={{ width: isActive ? "100%" : "0%", opacity: isActive ? 1 : 0.9 }}
-                  whileHover={{ width: "100%", opacity: 1 }}
+                  whileHover={reduceMotion ? undefined : { width: "100%", opacity: 1 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 />
               </motion.div>

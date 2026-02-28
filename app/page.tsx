@@ -123,18 +123,18 @@ export default function HomePage() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.1 }
+      transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.08 }
     }
   };
 
   const heroItemVariants = reduceMotion
     ? {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { duration: 0.45, ease: "easeOut" } }
+        hidden: { opacity: 1, y: 0 },
+        visible: { opacity: 1, y: 0 }
       }
     : {
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+        hidden: { opacity: 0, y: 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
       };
 
   return (
@@ -143,7 +143,13 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-20 bg-[url('https://i.postimg.cc/Z5Mqj0XJ/pexels-googledeepmind-18069814-(1).jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-navy/65 to-navy" />
         <div className="section-container">
-          <motion.div variants={heroVariants} initial="hidden" animate="visible" className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <motion.div
+            variants={heroVariants}
+            initial={reduceMotion ? false : "hidden"}
+            whileInView={reduceMotion ? undefined : "visible"}
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid gap-12 lg:grid-cols-2 lg:items-center"
+          >
             <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
               <motion.p variants={heroItemVariants} className="mb-4 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.24em] text-gold">
                 <span className="inline-block h-6 w-6 rounded-full border border-gold/80" aria-hidden="true" />
@@ -269,7 +275,7 @@ export default function HomePage() {
                 key={activeTestimonial}
                 initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
                 animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <Card className="border-gold/25">
                   <div className="flex flex-col items-center text-center">
