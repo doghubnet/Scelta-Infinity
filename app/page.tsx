@@ -201,18 +201,30 @@ export default function HomePage() {
 
       <MotionSection className="section-container" delay={0.05}>
         <SectionTitle eyebrow="Featured Portfolio" title="Books Crafted for Real-World Value" description="Every title is developed with practical insight and publishing quality standards suitable for international readers." />
-        <div className="grid gap-6 md:grid-cols-3">
-          <Card className="overflow-hidden p-0">
-            <div className="relative aspect-[3/4] w-full"><Image src="https://i.imgur.com/uFKSQs0.jpg" alt="Client testimonial" width={400} height={250} className="object-cover rounded-xl" priority={true} /></div>
-            <div className="p-6"><PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton></div>
+        <div className="grid items-stretch gap-6 md:grid-cols-3">
+          <Card className="flex h-full flex-col overflow-hidden p-0">
+            <div className="relative aspect-[3/4] w-full">
+              <Image src="https://i.imgur.com/uFKSQs0.jpg" alt="Featured book 1 cover" fill className="object-cover" priority={true} sizes="(min-width: 768px) 33vw, 100vw" />
+            </div>
+            <div className="p-4">
+              <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
+            </div>
           </Card>
-          <Card className="overflow-hidden p-0">
-            <div className="relative aspect-[3/4] w-full"><Image src="https://i.imgur.com/cvcjADZ.jpg" alt="Client testimonial" width={400} height={250} className="object-cover rounded-xl" priority={true} /></div>
-            <div className="p-6"><PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton></div>
+          <Card className="flex h-full flex-col overflow-hidden p-0">
+            <div className="relative aspect-[3/4] w-full">
+              <Image src="https://i.imgur.com/cvcjADZ.jpg" alt="Featured book 2 cover" fill className="object-cover" priority={true} sizes="(min-width: 768px) 33vw, 100vw" />
+            </div>
+            <div className="p-4">
+              <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
+            </div>
           </Card>
-          <Card className="overflow-hidden p-0">
-            <div className="relative aspect-[3/4] w-full"><Image src="https://i.imgur.com/wefa6yu.jpg" alt="Client testimonial" width={400} height={250} className="object-cover rounded-xl" priority={true} /></div>
-            <div className="p-6"><PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton></div>
+          <Card className="flex h-full flex-col overflow-hidden p-0">
+            <div className="relative aspect-[3/4] w-full">
+              <Image src="https://i.imgur.com/wefa6yu.jpg" alt="Featured book 3 cover" fill className="object-cover" priority={true} sizes="(min-width: 768px) 33vw, 100vw" />
+            </div>
+            <div className="p-4">
+              <PrimaryButton href="/books">BUY ON AMAZON</PrimaryButton>
+            </div>
           </Card>
         </div>
       </MotionSection>
@@ -261,9 +273,9 @@ export default function HomePage() {
               >
                 <Card className="border-gold/25">
                   <div className="flex flex-col items-center text-center">
-                    <Image src={testimonials[activeTestimonial].photo} alt="Client testimonial" width={400} height={250} className="object-cover rounded-xl" priority={true} unoptimized />
+                    <Image src={testimonials[activeTestimonial].photo} alt="Client testimonial" width={56} height={56} className="h-14 w-14 rounded-full border border-gold/40 object-cover" priority={true} unoptimized />
                     <p className="mt-5 text-navy/85">“{testimonials[activeTestimonial].quote}”</p>
-                    <p className="mt-4 font-semibold text-navy">{testimonials[activeTestimonial].name}</p>
+                    <p className="mt-4 text-base font-semibold text-navy">{testimonials[activeTestimonial].name}</p>
                     <p className="text-sm text-navy/70">{testimonials[activeTestimonial].country}</p>
                   </div>
                 </Card>
@@ -292,7 +304,7 @@ export default function HomePage() {
                 const isOpen = openFaq === idx;
                 return (
                   <div key={item.q} className={`rounded-2xl border bg-white shadow-luxury transition-all duration-300 ease-out ${isOpen ? "border-gold/60 shadow-[0_24px_40px_-24px_rgba(212,175,55,0.55)]" : "border-gold/20"}`}>
-                    <button type="button" onClick={() => setOpenFaq(isOpen ? null : idx)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left">
+                    <button type="button" onClick={() => setOpenFaq(isOpen ? null : idx)} className="flex w-full items-center justify-between gap-4 px-7 py-5 text-left">
                       <span className="font-bold text-navy">{item.q}</span>
                       <span className={`text-gold transition-transform duration-300 ease-out ${isOpen ? "rotate-180" : "rotate-0"}`}>▼</span>
                     </button>
@@ -302,7 +314,7 @@ export default function HomePage() {
                       transition={{ duration: 0.3, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 pb-5 text-navy/80">{item.a}</p>
+                      <p className="px-7 pb-6 text-navy/80">{item.a}</p>
                     </motion.div>
                   </div>
                 );
