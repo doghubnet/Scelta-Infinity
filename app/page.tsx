@@ -112,12 +112,14 @@ export default function HomePage() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   useEffect(() => {
+    if (reduceMotion) return;
+
     const timer = setInterval(() => {
       setActiveTestimonial((current) => (current + 1) % testimonials.length);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [reduceMotion]);
 
   const heroVariants = {
     hidden: { opacity: 0 },
@@ -273,8 +275,8 @@ export default function HomePage() {
             <div className="mx-auto mt-8 max-w-3xl">
               <motion.div
                 key={activeTestimonial}
-                initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
-                animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+                animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <Card className="border-gold/25">
