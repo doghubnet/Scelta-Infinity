@@ -308,14 +308,11 @@ export default function HomePage() {
                       <span className="font-bold text-navy">{item.q}</span>
                       <span className={`text-gold transition-transform duration-300 ease-out ${isOpen ? "rotate-180" : "rotate-0"}`}>▼</span>
                     </button>
-                    <motion.div
-                      initial={false}
-                      animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="overflow-hidden"
+                    <div
+                      className={`overflow-hidden transition-[max-height] duration-300 ease-out ${isOpen ? "max-h-40" : "max-h-0"}`}
                     >
                       <p className="px-7 pb-6 text-navy/80">{item.a}</p>
-                    </motion.div>
+                    </div>
                   </div>
                 );
               })}
