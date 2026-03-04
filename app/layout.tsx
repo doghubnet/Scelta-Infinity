@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { company } from "@/lib/site-data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-cormorant" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${company.domain}`),
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable}`}>
+      <body className={`${inter.variable} ${cormorant.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />

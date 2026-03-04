@@ -23,10 +23,10 @@ const config: Config = {
           "Roboto",
           "sans-serif"
         ],
-        serif: ["var(--font-playfair)", "Playfair Display", "serif"]
+        serif: ["var(--font-cormorant)", "Cormorant Garamond", "serif"]
       },
       boxShadow: {
-        luxury: "0 20px 40px -20px rgba(10, 37, 64, 0.35)"
+        luxury: "0 22px 44px -22px rgba(10, 37, 64, 0.36)"
       }
     }
   },

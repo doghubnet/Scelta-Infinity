@@ -184,7 +184,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <MotionSection className="bg-white" delay={0.03}>
+      <MotionSection className="bg-white" delay={0.1}>
         <div className="section-container">
           <SectionTitle
             eyebrow="Updates"
@@ -207,7 +207,7 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <MotionSection className="section-container" delay={0.05}>
+      <MotionSection className="section-container" delay={0.2}>
         <SectionTitle eyebrow="Featured Portfolio" title="Books Crafted for Real-World Value" description="Every title is developed with practical insight and publishing quality standards suitable for international readers." />
         <div className="grid items-stretch gap-6 md:grid-cols-3">
           <Card className="flex h-full flex-col overflow-hidden p-0">
@@ -237,7 +237,7 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-white" delay={0.08}>
+      <MotionSection className="bg-white" delay={0.3}>
         <div className="section-container">
           <SectionTitle eyebrow="Affiliate Marketplace" title="Curated Wealth-Mindset Recommendations" description="Explore premium titles from trusted platforms that align with high-performance thinking and disciplined execution." />
           <div className="grid gap-6 md:grid-cols-3">
@@ -248,7 +248,7 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-white" delay={0.11}>
+      <MotionSection className="bg-white" delay={0.1}>
         <div className="section-container">
           <SectionTitle eyebrow="About Us" title="Purpose-Driven, Quality-Focused, Globally Oriented" description="A refined platform built for lasting brand integrity in publishing and affiliate marketing." />
           <div className="grid gap-6 md:grid-cols-2">
@@ -258,7 +258,7 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-navy py-8 text-center text-sm text-white/90" delay={0.12}>
+      <MotionSection className="bg-navy py-8 text-center text-sm text-white/90" delay={0.2}>
         <div className="section-container py-0 md:py-0">
           <p>{affiliateDisclosure}</p>
           <p className="mt-2">All purchases are completed on third-party platforms such as Amazon KDP or affiliate partner sites.</p>
@@ -266,7 +266,7 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-white" delay={0.14}>
+      <MotionSection className="bg-white" delay={0.3}>
         <div className="section-container">
           <SectionTitle eyebrow="Growth Framework" title="The Strategy Behind Every Success" description="Built for readers and builders who value proven execution, measurable progress, and long-term growth." />
 

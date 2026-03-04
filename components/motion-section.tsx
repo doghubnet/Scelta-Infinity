@@ -15,7 +15,7 @@ export function MotionSection({ children, className = "", delay = 0 }: { childre
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut", delay, staggerChildren: 0.08 }
+      transition: { duration: 0.6, ease: "easeOut", delay, staggerChildren: 0.1 }
     }
   };
 
