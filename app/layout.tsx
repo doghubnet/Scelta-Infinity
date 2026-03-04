@@ -6,7 +6,12 @@ import Footer from "@/components/footer";
 import { company } from "@/lib/site-data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-cormorant" });
+const cormorant = Cormorant_Garamond({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${company.domain}`),
